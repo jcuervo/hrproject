@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929074636) do
+ActiveRecord::Schema.define(:version => 20110929074637) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20110929074636) do
     t.string   "city"
     t.string   "region"
     t.integer  "zip"
-    t.string   "birthdate"
+    t.date     "birthdate"
     t.string   "landline"
     t.string   "mobile"
     t.string   "email"
@@ -125,6 +125,17 @@ ActiveRecord::Schema.define(:version => 20110929074636) do
     t.string   "name"
     t.integer  "age"
     t.string   "occupation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_managements", :force => true do |t|
+    t.string   "site"
+    t.string   "title"
+    t.boolean  "reverse",     :default => true, :null => false
+    t.string   "description"
+    t.string   "keywords"
+    t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
