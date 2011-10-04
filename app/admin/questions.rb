@@ -1,3 +1,4 @@
 ActiveAdmin.register Question do
-  menu :parent => "Applicants"
+  # menu :parent => "Applicants"
+  menu false
 end
