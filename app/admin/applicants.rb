@@ -1,5 +1,5 @@
 ActiveAdmin.register Applicant do  
-  menu :parent => "Applicants"
+  # menu :parent => "Applicants"
   
   filter :first_name
   filter :last_name
