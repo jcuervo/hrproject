@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  applicant_id: 1
+  employer: MyString
+  address: MyString
+  supervisor: MyString
+  supervisor_contact: MyString
+  can_contact: false
+  job_title: MyString
+  employed_from: 2011-09-29
+  employed_to: 2011-09-29
+  salary_range: MyString
+  responsibilities: MyText
+  reason_for_leaving: MyText
+
+two:
+  applicant_id: 1
+  employer: MyString
+  address: MyString
+  supervisor: MyString
+  supervisor_contact: MyString
+  can_contact: false
+  job_title: MyString
+  employed_from: 2011-09-29
+  employed_to: 2011-09-29
+  salary_range: MyString
+  responsibilities: MyText
+  reason_for_leaving: MyText

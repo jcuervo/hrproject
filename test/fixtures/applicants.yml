@@ -1,0 +1,64 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  source_id: 1
+  other_source: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  gender: MyString
+  civil_status: MyString
+  street: MyString
+  city: MyString
+  region: MyString
+  zip: 1
+  birthdate: MyString
+  landline: MyString
+  mobile: MyString
+  email: MyString
+  sss: MyString
+  philhealth: MyString
+  pagibig: MyString
+  tin: MyString
+  other_skills: MyText
+  abroad_plans: false
+  how_soon: MyString
+  emergency_contact: MyString
+  emergency_phone: MyString
+  emergency_address: MyString
+  date_available_for_work: 2011-09-29
+  desired_salary_range: MyString
+  date_of_application: 2011-09-29
+  other_observations: MyText
+
+two:
+  source_id: 1
+  other_source: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  gender: MyString
+  civil_status: MyString
+  street: MyString
+  city: MyString
+  region: MyString
+  zip: 1
+  birthdate: MyString
+  landline: MyString
+  mobile: MyString
+  email: MyString
+  sss: MyString
+  philhealth: MyString
+  pagibig: MyString
+  tin: MyString
+  other_skills: MyText
+  abroad_plans: false
+  how_soon: MyString
+  emergency_contact: MyString
+  emergency_phone: MyString
+  emergency_address: MyString
+  date_available_for_work: 2011-09-29
+  desired_salary_range: MyString
+  date_of_application: 2011-09-29
+  other_observations: MyText
+

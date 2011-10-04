@@ -1,0 +1,39 @@
+=semantic_form_for :applicant do |f|
+  =f.inputs "Personal Information" do 
+    =f.input :source
+    =f.input :other_source
+    =f.input :first_name
+    =f.input :middle_name
+    =f.input :last_name
+    =f.input :street
+    =f.input :city
+    =f.input :region
+    =f.input :zip
+    =f.input :sss, :label => "SSS"
+    =f.input :philhealth
+    =f.input :pagibig, :label => "Pag-ibig"
+    =f.input :tin, :label => "TIN"
+    
+    =f.inputs :for => :educations, :name => "Education & Training" do |e|
+      =e.input :school
+      =e.input :school_name
+      =e.input :address
+      =e.input :years_attended
+      =e.input :course
+    
+    =f.input :other_skills
+    
+    =f.inputs :for => :work_experience, :name => "Work Experience" do |w|
+      =w.input :job_title
+      =w.input :employer
+      =w.input :address
+      =w.input :employed_from, :as => :date, :start_year => (Date.today - 20), :end_year => Date.today.year
+      =w.input :employed_to, :as => :date , :start_year => (Date.today - 20), :end_year => Date.today.year
+      =w.input :salary_range
+      =w.input :resposibilities
+      =w.input :reason_for_leaving
+      =w.input :supervisor
+      =w.input :supervisor_contact
+      =w.input :can_contact, :as => :boolean
+    
+    =f.buttons

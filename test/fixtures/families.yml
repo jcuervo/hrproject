@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  applicant_id: 1
+  relationship: MyString
+  name: MyString
+  age: 1
+  occupation: MyString
+
+two:
+  applicant_id: 1
+  relationship: MyString
+  name: MyString
+  age: 1
+  occupation: MyString

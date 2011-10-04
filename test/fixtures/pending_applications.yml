@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  applicant_id: 1
+  name: MyString
+  salary: MyString
+  other_info: MyText
+
+two:
+  applicant_id: 1
+  name: MyString
+  salary: MyString
+  other_info: MyText

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  applicant_id: 1
+  school_id: 1
+  address: MyString
+  school_name: MyString
+  years_attended: MyString
+  course: MyString
+
+two:
+  applicant_id: 1
+  school_id: 1
+  address: MyString
+  school_name: MyString
+  years_attended: MyString
+  course: MyString

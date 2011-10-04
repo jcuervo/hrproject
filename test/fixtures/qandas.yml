@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  applicant_id: 1
+  question_id: 1
+  answer: false
+  others: MyString
+
+two:
+  applicant_id: 1
+  question_id: 1
+  answer: false
+  others: MyString
