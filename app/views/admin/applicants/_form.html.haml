@@ -27,8 +27,8 @@
       =w.input :job_title
       =w.input :employer
       =w.input :address
-      =w.input :employed_from, :as => :date, :start_year => (Date.today - 20), :end_year => Date.today.year
-      =w.input :employed_to, :as => :date , :start_year => (Date.today - 20), :end_year => Date.today.year
+      =w.input :employed_from, :as => :date, :start_year => (Time.now.year - 20), :end_year => Time.now.year
+      =w.input :employed_to, :as => :date , :start_year => (Time.now.year - 20), :end_year => Time.now.year
       =w.input :salary_range
       =w.input :resposibilities
       =w.input :reason_for_leaving
@@ -36,4 +36,5 @@
       =w.input :supervisor_contact
       =w.input :can_contact, :as => :boolean
     
-    =f.buttons
+    =f.buttons do
+      = f.commit_button
