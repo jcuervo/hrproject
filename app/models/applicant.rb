@@ -5,6 +5,8 @@ class Applicant < ActiveRecord::Base
   has_many :pending_applications
   has_many :families
   has_many :questions, :through => :qanda
+  has_many :next_actions
+  has_many :interview_ratings
   accepts_nested_attributes_for :educations, :allow_destroy => true
 
   validates :first_name, :middle_name, :last_name, :gender, :civil_status, :street, :city, :region, :zip,
