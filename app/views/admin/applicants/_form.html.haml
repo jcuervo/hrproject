@@ -1,6 +1,6 @@
 =semantic_form_for :applicant do |f|
   =f.inputs "Personal Information" do 
-    =f.input :source
+    =f.input :source, :as => :select, :collection => Source.find(:all)
     =f.input :other_source
     =f.input :first_name
     =f.input :middle_name
@@ -15,7 +15,7 @@
     =f.input :tin, :label => "TIN"
     
     =f.inputs :for => :educations, :name => "Education & Training" do |e|
-      =e.input :school
+      =e.input :school, :as => :select, :collection => School.find(:all)
       =e.input :school_name
       =e.input :address
       =e.input :years_attended
@@ -23,18 +23,29 @@
     
     =f.input :other_skills
     
-    =f.inputs :for => :work_experience, :name => "Work Experience" do |w|
+    =f.inputs :for => :work_experiences, :name => "Work Experiences" do |w|
       =w.input :job_title
       =w.input :employer
       =w.input :address
-      =w.input :employed_from, :as => :date, :start_year => (Time.now.year - 20), :end_year => Time.now.year
-      =w.input :employed_to, :as => :date , :start_year => (Time.now.year - 20), :end_year => Time.now.year
+      =w.input :employed_from, :as => :date, :start_year => (Time.now.year - 20), :end_year => Date.today.year
+      =w.input :employed_to, :as => :date , :start_year => (Time.now.year  - 20), :end_year => Date.today.year
       =w.input :salary_range
       =w.input :resposibilities
       =w.input :reason_for_leaving
       =w.input :supervisor
       =w.input :supervisor_contact
       =w.input :can_contact, :as => :boolean
+      
+    =f.inputs :for => :families, :name => "Family Background" do |fb|
+      =fb.input :relationship, :as => :select, :collection => ["Father", "Mother", "Sibling"] 
+      =fb.input :name
+      =fb.input :age
+      =fb.input :occupation
+      
+    =f.inputs :for => :references, :name => "Professional/Business References" do |r|
+      =r.input :name
+      =r.input :address
+      =r.input :contact
+      =r.input :occupation
     
-    =f.buttons do
-      = f.commit_button
+    =f.buttons
