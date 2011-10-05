@@ -1,4 +1,13 @@
 ActiveAdmin.register AdminUser do
+  # controller.load_and_authorize_resource :except => :index
+  controller.authorize_resource
+
+  menu :if => lambda{|tabs_renderer|
+    controller.current_ability.can?(:manage, AdminUser)
+  }
+  
+  filter :email
+  
   show :title => :email do
     attributes_table :email, :created_at
   end
@@ -7,5 +16,14 @@ ActiveAdmin.register AdminUser do
     column :email do |admin_user|
       link_to admin_user.email, admin_admin_user_path(admin_user)
     end
+    column :role
   end
+
+  controller do
+    
+    def scoped_collection
+      end_of_association_chain.accessible_by(current_ability)
+    end
+  end
+  
 end
