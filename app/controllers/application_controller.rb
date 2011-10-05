@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include FrontendHelpers::Html5Helper
   
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, :alert => exception.message
+    redirect_to "/admin", :alert => exception.message
   end
   
   require 'active_admin_views_pages_base.rb'
