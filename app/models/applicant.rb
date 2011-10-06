@@ -4,10 +4,13 @@ class Applicant < ActiveRecord::Base
   has_many :work_experiences
   has_many :pending_applications
   has_many :families
+  has_many :references
   has_many :questions, :through => :qanda
-  has_many :next_actions
-  has_many :interview_ratings
+
   accepts_nested_attributes_for :educations, :allow_destroy => true
+  accepts_nested_attributes_for :work_experiences, :allow_destroy => true
+  accepts_nested_attributes_for :families, :allow_destroy => true
+  accepts_nested_attributes_for :references, :allow_destroy => true
 
   #validates :first_name, :middle_name, :last_name, :presence => true
   #validates :email, :uniqueness => true
