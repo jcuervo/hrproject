@@ -13,7 +13,11 @@ class Applicant < ActiveRecord::Base
   #validates :email, :uniqueness => true
   #validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
-  attr_accessible :first_name, :middle_name, :last_name
+  attr_accessible :first_name, :middle_name, :last_name, :gender, :civil_status, :street, :city, 
+                  :region, :zip, :birthdate, :landline, :mobile, :email, :sss, :philhealth, :pagibig, 
+                  :tin, :other_skills, :abroad_plans, :how_soon, :emergency_contact, :emergency_address, 
+                  :emergency_phone, :date_available_for_work, :desired_salary_range, :date_of_application,
+                  :other_observations
   attr_writer :current_step
 
   def current_step
@@ -38,6 +42,13 @@ class Applicant < ActiveRecord::Base
 
   def last_step?
     current_step == steps.last
+  end
+
+  def all_valid?
+    steps.all? do |step|
+      self.current_step = step
+      valid?
+    end
   end
 end
 

@@ -1,4 +1,28 @@
-=f.inputs do
-  = f.input :first_name, :label => "First Name"
-  = f.input :middle_name, :label => "Middle Name"
-  = f.input :last_name, :label => "Last Name"
+=f.inputs do  
+  = f.input :first_name
+  = f.input :middle_name
+  = f.input :last_name
+  = f.input :gender, :as => :select, :collection => ["Male","Female"]
+  = f.input :civil_status, :as => :select, :collection => ["Single","Married"]
+  = f.input :street
+  = f.input :city
+  = f.input :region
+  = f.input :zip
+  = f.input :birthdate, :as => :date, :label => "Birth Date"
+  = f.input :landline
+  = f.input :mobile
+  = f.input :email
+  = f.input :sss
+  = f.input :philhealth
+  = f.input :pagibig
+  = f.input :tin
+  = f.input :other_skills, :as => :text
+  = f.input :abroad_plans, :as => :radio, :collection => ["Yes","No"]
+  = f.input :how_soon, :label => "How Soon?"
+  = f.input :emergency_contact, :label => "Emergency Contact Person"
+  = f.input :emergency_phone, :label => "Emergency Contact Person's number"
+  = f.input :emergency_address, :label => "Emergency Contact Person's address"
+  = f.input :date_available_for_work, :as => :date, :label => "Date available for work"
+  = f.input :desired_salary_range
+  = f.input :date_of_application, :as => :date, :label => "Date of Application"
+  = f.input :other_observations, :as => :text
