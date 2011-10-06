@@ -1,9 +1,10 @@
 ActiveAdmin.register AdminUser do
+  menu :if => proc{can? :manage, AdminUser}
   controller.authorize_resource
 
-  menu :if => lambda{|tabs_renderer|
-    controller.current_ability.can?(:manage, AdminUser)
-  }
+  # menu :if => lambda{|tabs_renderer|
+  #   controller.current_ability.can?(:manage, AdminUser)
+  # }
   
   filter :email
   
