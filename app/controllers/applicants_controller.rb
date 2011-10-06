@@ -25,16 +25,14 @@ class ApplicantsController < ApplicationController
         if params[:commit]
           @applicant.save      
 
-          if params[:applicant][:education]
-            params[:applicant][:education].each do |e|
-              Education.create(
-                :applicant_id => @applicant,
-                :address => e.address,
-                :school_name => e.school_name,
-                :years_attended => e.years_attended,
-                :course => e.course
-              )
-            end
+          if params[:applicant][:education]            
+            Education.create(
+              :applicant_id => @applicant.id,
+              :address => params[:applicant][:education][:address],
+              :school_name => params[:applicant][:education][:school_name],
+              :years_attended => params[:applicant][:education][:years_attended],
+              :course => params[:applicant][:education][:course]
+            )
           end          
         end
       else
