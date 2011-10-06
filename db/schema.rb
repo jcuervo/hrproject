@@ -130,6 +130,30 @@ ActiveRecord::Schema.define(:version => 20111005045016) do
     t.datetime "updated_at"
   end
 
+  create_table "interview_dimensions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interview_ratings", :force => true do |t|
+    t.integer  "interview_dimension_id"
+    t.integer  "applicant_id"
+    t.string   "answer"
+    t.integer  "admin_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "next_actions", :force => true do |t|
+    t.string   "action"
+    t.string   "by_whom"
+    t.date     "schedule"
+    t.integer  "applicant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "page_managements", :force => true do |t|
     t.string   "site"
     t.string   "title"
