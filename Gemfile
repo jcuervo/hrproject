@@ -5,7 +5,7 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2'
+# gem 'mysql2'
 gem 'sqlite3'
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'execjs'
@@ -65,3 +65,4 @@ gem "frontend-helpers"
 gem "cancan"
 gem "sitemap_generator"
 gem 'meta-tags', :require => 'meta_tags'
+

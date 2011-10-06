@@ -51,4 +51,3 @@ class Applicant < ActiveRecord::Base
     end
   end
 end
-
