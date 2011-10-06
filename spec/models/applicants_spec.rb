@@ -75,4 +75,23 @@ describe "Applicants" do
       Factory.build(:applicant, :desired_salary_range => nil).should_not be_valid
     end
   end
+
+    it "should have many educations" do
+      education = Factory(:education)
+      assert(education.applicant.educations.size >= 1)
+      assert_equal(education.applicant.educations.first.school_name,"school test")
+    end
+
+    it "should have many work experiences" do
+      applicant = Factory(:applicant_with_work_experiences)
+      applicant.work_experiences(true)
+    end
+
+    it "should have many families" do
+      applicant = Factory(:applicant_with_families)
+      applicant.families(true)
+      #puts applicant.families.inspect
+    end
 end
+
+

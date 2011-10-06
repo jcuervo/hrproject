@@ -12,6 +12,7 @@ class Applicant < ActiveRecord::Base
   accepts_nested_attributes_for :families, :allow_destroy => true
   accepts_nested_attributes_for :references, :allow_destroy => true
 
+
   #validates :first_name, :middle_name, :last_name, :presence => true
   #validates :email, :uniqueness => true
   #validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }

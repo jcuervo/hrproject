@@ -8,3 +8,5 @@ config/deploy.rb
 tmp/
 Gemfile.lock
 .sass-cache/
+.idea/
+db/schema.rb
