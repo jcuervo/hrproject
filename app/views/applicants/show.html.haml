@@ -1,0 +1,14 @@
+= title "Applicant"
+
+%p
+  %strong First Name:
+  =h @applicant.first_name
+%p
+  %strong Middle Name:
+  =h @applicant.middle_name 
+%p
+  %strong Last Name:
+  =h @applicant.last_name  
+
+%p
+  = link_to "View All", applicants_path 

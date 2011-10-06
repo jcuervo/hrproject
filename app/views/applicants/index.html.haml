@@ -1,0 +1,21 @@
+= title "Applicant" 
+
+%table
+  %tr
+    %th First Name
+    %th Middle Name
+    %th Last Name
+  - for applicant in @applicants
+    %tr
+      %td
+        =h applicant.first_name
+      %td
+        =h applicant.middle_name
+      %td
+        =h applicant.last_name
+        
+      %td
+        = link_to "Show", applicant     
+
+%p
+  = link_to "New Applicant", new_applicant_path 
