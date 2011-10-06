@@ -4,6 +4,8 @@ class AdminUser < ActiveRecord::Base
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :interview_ratings
+  
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   
@@ -18,4 +20,7 @@ class AdminUser < ActiveRecord::Base
   def moderator?
     self.role.eql?("moderator") ? true : false
   end
+  
+  
+
 end

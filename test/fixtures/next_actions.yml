@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  action: MyString
+  by_whom: MyString
+  schedule: 2011-10-04
+  applicant_id: 1
+
+two:
+  action: MyString
+  by_whom: MyString
+  schedule: 2011-10-04
+  applicant_id: 1

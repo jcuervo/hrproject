@@ -1,4 +1,4 @@
 ActiveAdmin.register WorkExperience do
-  # menu :parent => "Applicants"
-  menu false
+  belongs_to :applicant  
+  menu :parent => "Applicants"
 end

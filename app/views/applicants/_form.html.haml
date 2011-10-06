@@ -1,0 +1,5 @@
+= semantic_form_for @applicant do |f|
+  = render "#{@applicant.current_step}_step", :f => f
+
+  = f.buttons :commit, :name => "Back" unless @applicant.first_step?
+  = f.commit_button

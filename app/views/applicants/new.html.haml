@@ -1,0 +1,27 @@
+.sixteen.columns{:title => "breadcrumbs"}
+  %h3 Employment Application
+  %ul.tabs
+    %li 
+      %a.active{:href => "#personal-info"} Personal Info
+    %li 
+      %a{:href => "#application-info"} Application Info
+    %li 
+      %a{:href => "#education-and-training"} Education / Training
+    %li 
+      %a{:href => "#work-experience"} Work Experience
+    %li 
+      %a{:href => "#family-background"} Family Background
+    %li 
+      %a{:href => "#q-and-a"} Q &amp; A
+    %li 
+      %a{:href => "#salary-structure"} Salary Structure
+    %li 
+      %a{:href => "#references"} References
+    %li 
+      %a{:href => "#application-certification"} Finalize
+
+.sixteen.columns{:title => "content"}
+  = render "form"
+
+%p
+  = link_to "Back to List", applicants_path
