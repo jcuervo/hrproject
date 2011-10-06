@@ -1,0 +1,10 @@
+.nested-fields
+  =f.inputs do 
+    =f.input :school_id, :as => :select, :collection => School.find(:all)
+    =f.input :school_name
+    =f.input :address
+    =f.input :years_attended
+    =f.input :course
+    %li
+      =label_tag ''
+      =link_to_remove_association "remove education", f

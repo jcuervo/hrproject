@@ -65,3 +65,6 @@ gem "frontend-helpers"
 gem "cancan"
 gem "sitemap_generator"
 gem 'meta-tags', :require => 'meta_tags'
+
+gem 'cocoon'
+
