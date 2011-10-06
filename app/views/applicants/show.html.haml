@@ -1,14 +1,110 @@
 = title "Applicant"
-
-%p
-  %strong First Name:
-  =h @applicant.first_name
-%p
-  %strong Middle Name:
-  =h @applicant.middle_name 
-%p
-  %strong Last Name:
-  =h @applicant.last_name  
+-for applicant in @applicant
+  %p
+    %strong First Name:
+    =h applicant.first_name
+  %p
+    %strong Middle Name:
+    =h applicant.middle_name 
+  %p
+    %strong Last Name:
+    =h applicant.last_name
+  - unless applicant.gender.blank?
+    %p
+      %strong Gender:
+      =h applicant.gender
+  - unless applicant.civil_status.blank?
+    %p
+      %strong Civil Status:
+      =h applicant.civil_status
+  - unless applicant.street.blank?
+    %p
+      %strong Street:
+      =h applicant.street
+  - unless applicant.city.blank?
+    %p
+      %strong City:
+      =h applicant.city
+  - unless applicant.region.blank?
+    %p
+      %strong Region:
+      =h applicant.region
+  - unless applicant.zip.blank?
+    %p
+      %strong Zip:
+      =h applicant.zip
+  - unless applicant.birthdate.blank?
+    %p
+      %strong Birthdate:
+      =h applicant.birthdate.strftime("%M %d, %Y")
+  - unless applicant.landline.blank?
+    %p
+      %strong Landline:
+      =h applicant.landline
+  - unless applicant.mobile.blank?
+    %p
+      %strong Mobile:
+      =h applicant.mobile
+  - unless applicant.email.blank?
+    %p
+      %strong Email:
+      =h applicant.email
+  - unless applicant.sss.blank?
+    %p
+      %strong SSS:
+      =h applicant.sss
+  - unless applicant.philhealth.blank?
+    %p
+      %strong Philhealth:
+      =h applicant.philhealth
+  - unless applicant.pagibig.blank?
+    %p
+      %strong Pagibig:
+      =h applicant.pagibig
+  - unless applicant.tin.blank?
+    %p
+      %strong TIN:
+      =h applicant.tin
+  - unless applicant.other_skills.blank?
+    %p
+      %strong Other Skills:
+      =h applicant.other_skills
+  - unless applicant.abroad_plans.blank?
+    %p
+      %strong Abroad Plans:
+      =h applicant.abroad_plans
+  - unless applicant.how_soon.blank?
+    %p
+      %strong How Soon?
+      =h applicant.how_soon
+  - unless applicant.emergency_contact.blank?
+    %p
+      %strong Emergency Contact Person:
+      =h applicant.emergency_contact
+  - unless applicant.emergency_phone.blank?
+    %p
+      %strong Emergency Contact Person's number:
+      =h applicant.emergency_phone
+  - unless applicant.emergency_address.blank?
+    %p
+      %strong Emergency Contact Person's address:
+      =h applicant.emergency_address
+  - unless applicant.date_available_for_work.blank?
+    %p
+      %strong Date available for work:
+      =h applicant.date_available_for_work
+  - unless applicant.desired_salary_range.blank?
+    %p
+      %strong Desired salary range:
+      =h applicant.desired_salary_range
+  - unless applicant.date_of_application.blank?
+    %p
+      %strong Date of Application:
+      =h applicant.date_of_application.strftime("%M %d, %Y")
+  - unless applicant.other_observations.blank?
+    %p
+      %strong Other Observations:
+      =h applicant.other_observations
 
 %p
   = link_to "View All", applicants_path 

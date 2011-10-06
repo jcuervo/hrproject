@@ -10,11 +10,7 @@ class ApplicantsController < ApplicationController
   def new
     session[:applicant_params] ||= {}
     @applicant = Applicant.new
-
-    if (@applicant.current_step == "education")
-      @applicant.educations.build
-      puts "education build"
-    end
+    @applicant.educations.build 
   end
 
   def create
@@ -22,18 +18,31 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new(session[:applicant_params])
     @applicant.current_step = session[:applicant_step]
 
-logger.info @applicant.inspect
-    #if params[:back_button]
-    #  @applicant.previous_step
-    #els
-    if @applicant.last_step?
-    logger.info "hutaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-      @applicant.save
-    #else
-    #  @applicant.next_step
+    if @applicant.valid?
+      if params[:back]
+        @applicant.previous_step
+      elsif @applicant.last_step?
+        if params[:commit]
+          @applicant.save      
+
+          if params[:applicant][:education]
+            params[:applicant][:education].each do |e|
+              Education.create(
+                :applicant_id => @applicant,
+                :address => e.address,
+                :school_name => e.school_name,
+                :years_attended => e.years_attended,
+                :course => e.course
+              )
+            end
+          end          
+        end
+      else
+        @applicant.next_step
+      end
+
+      session[:applicant_step] = @applicant.current_step
     end
-    
-    session[:applicant_step] = @applicant.current_step
     
     if @applicant.new_record?
       render "new"
@@ -41,7 +50,7 @@ logger.info @applicant.inspect
       session[:applicant_step] = session[:applicant_params] = nil
       flash[:notice] = "applicant saved!"
       redirect_to @applicant
-    end
+    end    
   end
-
+  
 end
