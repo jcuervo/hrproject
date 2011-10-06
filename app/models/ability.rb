@@ -3,7 +3,14 @@ class Ability
 
   # let ActiveAdmin allow initial user sign-up
     def initialize(user)
-      can :manage, :all
+      user ||= AdminUser.new
+      case user.role
+        when "admin"
+          can :manage, :all
+        when "moderator"
+          can :manage, AdminUser
+          cannot [:create, :destroy, :edit], AdminUser
+      end
     
     # Define abilities for the passed in user here. For example:
     #
