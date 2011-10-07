@@ -9,7 +9,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'execjs'
-gem 'therubyracer'
+#gem 'therubyracer'
 
 gem 'prawn'
 gem 'meta-tags'

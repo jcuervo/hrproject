@@ -1,6 +1,8 @@
 =f.semantic_fields_for :education do |e|
-  =e.input :address
+  =e.input :school, :as => :select, :collection => School.all
+  =e.input :address  
   =e.input :school_name
   =e.input :years_attended
   =e.input :course
+
       
