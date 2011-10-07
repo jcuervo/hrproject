@@ -1,16 +1,16 @@
 %h4 Personal Information
 #personal_information
   =f.inputs do  
-    = f.input :first_name, :required => :true
-    = f.input :middle_name, :required => :true
-    = f.input :last_name, :required => :true
+    = f.input :first_name
+    = f.input :middle_name
+    = f.input :last_name
     = f.input :gender, :label => "Gender", :as => :select, :collection => ["Male","Female"]
     = f.input :civil_status, :label => "Civil Status", :as => :select, :collection => ["Single","Married"]
     = f.input :street
     = f.input :city
     = f.input :region
     = f.input :zip
-    = f.input :birthdate, :label => "Birth Date", :as => :date, :start_year => 1950
+    = f.input :birthdate, :label => "Birth Date", :as => :text
     = f.input :landline
     = f.input :mobile
     = f.input :email
