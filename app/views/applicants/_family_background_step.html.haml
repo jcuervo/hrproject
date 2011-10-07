@@ -1,6 +1,6 @@
-=f.semantic_fields_for :family do |f|
-  =f.input :relationship, :as => :select, :collection => ["Father","Mother","Sibling"]
-  =f.input :name
-  =f.input :age
-  =f.input :occupation
-
+%h4 Family Background
+#family_background
+  =f.semantic_fields_for :family do |family|
+    =render "family_sub_step", :f => family
+  .links
+    =link_to_add_association "add family relationship", f, :families

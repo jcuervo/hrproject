@@ -12,8 +12,8 @@ gem 'execjs'
 #gem 'therubyracer'
 
 gem 'prawn'
-gem 'ruby-mysql'
-gem 'mysql'
+#gem 'ruby-mysql'
+#gem 'mysql'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,7 +32,7 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "rspec-rails"
   gem "capybara"
-  gem "guard-rspec"
+  #gem "guard-rspec"
 end
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
