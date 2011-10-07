@@ -3,5 +3,5 @@
 
   = f.buttons do
     - unless @applicant.first_step?
-      %li= f.submit :name => "back", :label => "Back"
+      %li.no_bullet= f.submit :name => "back", :label => "Back", :value => "Back"
     = f.commit_button :continue
