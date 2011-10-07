@@ -12,6 +12,8 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'prawn'
+gem 'ruby-mysql'
+gem 'mysql'
 
 # Gems used only for assets and not required
 # in production environments by default.
