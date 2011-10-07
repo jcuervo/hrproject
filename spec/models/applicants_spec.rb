@@ -27,52 +27,42 @@ describe "Applicants" do
       Factory.build(:applicant, :last_name => nil).should_not be_valid
     end
 
-    it "should be invalid without gender" do
-      Factory.build(:applicant, :gender => nil).should_not be_valid
-    end
-
-    it "should be invalid civil status" do
-      Factory.build(:applicant, :civil_status => nil).should_not be_valid
-    end
-
-    it "should be invalid without street" do
-      Factory.build(:applicant, :street => nil).should_not be_valid
-    end
-
-    it "should be invalid without city" do
-      Factory.build(:applicant, :city => nil).should_not be_valid
-    end
-
-    it "should be invalid without region" do
-      Factory.build(:applicant, :region => nil).should_not be_valid
-    end
-
-    it "should be invalid without zip" do
-      Factory.build(:applicant, :zip => nil).should_not be_valid
-    end
-
-    it "should be invalid without birthdate" do
-      Factory.build(:applicant, :birthdate => nil).should_not be_valid
-    end
-
-    it "should be invalid without landline" do
-      Factory.build(:applicant, :landline => nil).should_not be_valid
-    end
-
-    it "should be invalid without mobile" do
-      Factory.build(:applicant, :mobile => nil).should_not be_valid
-    end
-
-    it "should be invalid without email" do
-      Factory.build(:applicant, :email => nil).should_not be_valid
-    end
-
-    it "should be invalid without date available for work" do
-      Factory.build(:applicant, :date_available_for_work => nil).should_not be_valid
-    end
-
-    it "should be invalid without desired salary range" do
-      Factory.build(:applicant, :desired_salary_range => nil).should_not be_valid
-    end
   end
+
+    it "should have many educations" do
+      education = Factory(:education)
+      assert(education.applicant.educations.size >= 1)
+      assert_equal(education.applicant.educations.first.school_name,"school test")
+    end
+
+    it "should have many work experiences" do
+      work_experience = Factory(:work_experience)
+      assert(work_experience.applicant.work_experiences.size >= 1)
+      assert_equal(work_experience.applicant.work_experiences.first.employer,"employer test")
+    end
+
+    it "should have many pending applications" do
+      applicant = Factory(:applicant_with_pending_applications)
+      applicant.pending_applications(true)
+    end
+
+    it "should have many families" do
+      family = Factory(:family)
+      assert(family.applicant.families.size >= 1)
+      assert_equal(family.applicant.families.first.relationship,"relationship test")
+    end
+
+    it "should have many references" do
+      reference = Factory(:reference)
+      assert(reference.applicant.references.size >= 1)
+      assert_equal(reference.applicant.references.first.name,"test")
+    end
+
+    it "should have many questions through question and answer" do
+      applicant = Factory.build(:applicant)
+      question = Factory.build(:question)
+      qanda = Factory.create(:qanda)
+    end
 end
+
+
