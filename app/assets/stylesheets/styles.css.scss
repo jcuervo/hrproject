@@ -10,3 +10,43 @@ label { float:left; line-height:28px; margin-right:10px; }
   text-align:center;
   line-height: 1.5;
 }
+
+form#new_applicant {
+  fieldset {
+    legend {
+      span {
+        font-weight:bold;
+        font-size:16px;
+      }
+    }
+    ol{
+      li {
+        list-style:none;
+        label {
+          width:150px;
+        }
+      }
+    }
+  }
+  li.no_bullet {
+    input {
+      margin-left:30px;
+      width:117px;
+      text-align:center;
+    }
+    list-style:none;
+  }
+}
+
+.no_bullet {list-style:none;}
+.longField {width:80%;}
+.midSizeTxtArea {height:150px;}
+.add_fields, .remove_fields {
+  text-transform:uppercase; 
+  font-weight:bold; 
+  color:#133142;
+  &:hover, &:link, &:visited {
+    color:#133142;
+  }
+  &:hover {text-decoration:none;}
+}
