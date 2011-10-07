@@ -1,24 +1,27 @@
-%h4 Personal Information
+/ %h4 Personal Information
 #personal_information
-  =f.inputs do  
-    = f.input :first_name, :required => :true
-    = f.input :middle_name, :required => :true
-    = f.input :last_name, :required => :true
+  =f.inputs :name => "Personal Information" do
+    = f.input :first_name
+    = f.input :middle_name
+    = f.input :last_name
     = f.input :gender, :label => "Gender", :as => :select, :collection => ["Male","Female"]
     = f.input :civil_status, :label => "Civil Status", :as => :select, :collection => ["Single","Married"]
-    = f.input :street
+    = f.input :birthdate, :label => "Birth Date", :as => :date, :start_year => 1950
+  = f.inputs :name => "Address and Contact details" do
+    = f.input :street, :label => "Street Address"
     = f.input :city
     = f.input :region
     = f.input :zip
-    = f.input :birthdate, :label => "Birth Date", :as => :date, :start_year => 1950
     = f.input :landline
     = f.input :mobile
     = f.input :email
-    = f.input :sss
-    = f.input :philhealth
-    = f.input :pagibig
-    = f.input :tin
-    = f.input :other_skills, :as => :text
+  = f.inputs :name => "Social Security and Others" do
+    = f.input :sss, :label => "SSS No."
+    = f.input :philhealth, :label => "PhilHealth No."
+    = f.input :pagibig, :label => "PagIbig No."
+    = f.input :tin, :label => "TIN"
+  = f.inputs :name => "Other personal details" do
+    = f.input :other_skills, :as => :text, :input_html => { :class => "longField midSizeTxtArea"}
     = f.input :abroad_plans, :label => "Do you have plans abroad?", :as => :radio, :collection => ["Yes","No"]
     = f.input :how_soon, :label => "How Soon?"
     = f.input :emergency_contact, :label => "Emergency Contact Person"
