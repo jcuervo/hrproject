@@ -9,7 +9,7 @@ gem 'mysql2'
 #gem 'sqlite3'
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'execjs'
-#gem 'therubyracer'
+gem 'therubyracer', '0.9.4'
 
 gem 'prawn'
 #gem 'ruby-mysql'
