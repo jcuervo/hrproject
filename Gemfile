@@ -44,7 +44,7 @@ gem "ckeditor"
 gem "paperclip"
 gem "kaminari"
 gem "frontend-helpers"
-gem "cancan"
+gem "cancan", "~> 1.6.7"
 gem "sitemap_generator"
 gem 'meta-tags', :require => 'meta_tags'
 gem 'cocoon'
