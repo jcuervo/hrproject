@@ -22,6 +22,7 @@ class Applicant < ActiveRecord::Base
                   :tin, :other_skills, :abroad_plans, :how_soon, :emergency_contact, :emergency_address, 
                   :emergency_phone, :date_available_for_work, :desired_salary_range, :date_of_application,
                   :other_observations, :educations_attributes, :families_attributes, :work_experiences_attributes
+                  :references_attributes
 
   attr_writer :current_step
 
@@ -30,7 +31,7 @@ class Applicant < ActiveRecord::Base
   end
 
   def steps
-    %w[personal_info education work_experience family_background]
+    %w[personal_info education work_experience family_background references]
   end
 
   def next_step
