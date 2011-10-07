@@ -1,14 +1,14 @@
 =f.inputs do  
-  = f.input :first_name
-  = f.input :middle_name
-  = f.input :last_name
-  = f.input :gender, :as => :select, :collection => ["Male","Female"]
-  = f.input :civil_status, :as => :select, :collection => ["Single","Married"]
+  = f.input :first_name, :required => :true
+  = f.input :middle_name, :required => :true
+  = f.input :last_name, :required => :true
+  = f.input :gender, :label => "Gender", :as => :select, :collection => ["Male","Female"]
+  = f.input :civil_status, :label => "Civil Status", :as => :select, :collection => ["Single","Married"]
   = f.input :street
   = f.input :city
   = f.input :region
   = f.input :zip
-  = f.input :birthdate, :as => :date, :label => "Birth Date"
+  = f.input :birthdate, :label => "Birth Date", :as => :date, :start_year => 1950
   = f.input :landline
   = f.input :mobile
   = f.input :email
@@ -17,12 +17,12 @@
   = f.input :pagibig
   = f.input :tin
   = f.input :other_skills, :as => :text
-  = f.input :abroad_plans, :as => :radio, :collection => ["Yes","No"]
+  = f.input :abroad_plans, :label => "Do you have plans abroad?", :as => :radio, :collection => ["Yes","No"]
   = f.input :how_soon, :label => "How Soon?"
   = f.input :emergency_contact, :label => "Emergency Contact Person"
   = f.input :emergency_phone, :label => "Emergency Contact Person's number"
   = f.input :emergency_address, :label => "Emergency Contact Person's address"
-  = f.input :date_available_for_work, :as => :date, :label => "Date available for work"
+  = f.input :date_available_for_work, :label => "Date available for work", :as => :date
   = f.input :desired_salary_range
-  = f.input :date_of_application, :as => :date, :label => "Date of Application"
+  = f.input :date_of_application, :label => "Date of Application", :as => :date
   = f.input :other_observations, :as => :text

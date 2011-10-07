@@ -1,6 +1,6 @@
-=f.semantic_fields_for :education do |e|
-  =e.input :address
-  =e.input :school_name
-  =e.input :years_attended
-  =e.input :course
-      
+%h4 Educations and Trainings
+#educations
+  =f.semantic_fields_for :educations do |education|
+    =render "education_sub_step", :f => education
+  .links
+    =link_to_add_association "add education", f, :educations

@@ -30,7 +30,7 @@ class Applicant < ActiveRecord::Base
   end
 
   def steps
-    %w[personal_info education]
+    %w[personal_info education work_experience family_background]
   end
 
   def next_step
