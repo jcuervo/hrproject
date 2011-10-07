@@ -46,3 +46,5 @@ jquery-ui.min.js: jquery-ui.min-0e8a11c7e970b57b4bf5c449cb14480d.js
 jquery.min.js: jquery.min-b11f0e0c6ff2b15efcb77ee68ca72f6d.js
 application.js: application-47a18bd0455c1eaf2598b739045a0cd0.js
 application.css: application-a532ce1698a42d51a4bc3f6ca853e51c.css
+active_admin.css: active_admin-ddb0dacc493ab45521086f1247cd68e4.css
+active_admin.js: active_admin-b32420d3cca2fdcf6339d1db5e27adcf.js
