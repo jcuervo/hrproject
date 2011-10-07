@@ -1,9 +1,7 @@
 = semantic_form_for @applicant do |f|
   = render "#{@applicant.current_step}_step", :f => f
 
-  %li.no_bullet
-  - unless @applicant.first_step?
-    %li.no_bullet
-      = f.submit :name => "back", :label => "Back", :value => "Back"
-      
-  = f.buttons :commit, :label => "Next", :value => "Next"
+  = f.buttons do
+    - unless @applicant.first_step?
+      %li.no_bullet= f.submit :name => "back", :label => "Back", :value => "Back"
+    = f.commit_button :continue

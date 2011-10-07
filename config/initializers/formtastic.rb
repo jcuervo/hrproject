@@ -15,3 +15,4 @@ module Formtastic
   end
 end
 Formtastic::SemanticFormBuilder.send(:include, Formtastic::DatePicker)
+# Formtastic::FormBuilder.i18n_lookups_by_default = true

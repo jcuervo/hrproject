@@ -5,11 +5,11 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-# gem 'mysql2'
-gem 'sqlite3'
+gem 'mysql2'
+#gem 'sqlite3'
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'execjs'
-#gem 'therubyracer'
+gem 'therubyracer'
 
 gem 'prawn'
 #gem 'ruby-mysql'
@@ -44,7 +44,7 @@ gem "ckeditor"
 gem "paperclip"
 gem "kaminari"
 gem "frontend-helpers"
-gem "cancan"
+gem "cancan", "~> 1.6.7"
 gem "sitemap_generator"
 gem 'meta-tags', :require => 'meta_tags'
 gem 'cocoon'

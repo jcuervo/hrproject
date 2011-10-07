@@ -1,6 +1,6 @@
 .nested-fields
   =f.inputs :name => "Education & Training" do 
-    =f.input :school_id, :as => :select, :collection => School.find(:all)
+    =f.input :school, :as => :select, :collection => ["High School","College","Graduate","Training"]
     =f.input :school_name
     =f.input :address
     =f.input :years_attended

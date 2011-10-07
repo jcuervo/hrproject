@@ -13,17 +13,50 @@ label { float:left; line-height:28px; margin-right:10px; }
 
 form#new_applicant {
   fieldset {
+    margin-bottom:15px;
+    border-bottom:1px dashed gray;
     legend {
+      margin-bottom:5px;
       span {
         font-weight:bold;
         font-size:16px;
+        color:#1b7cdc;
       }
     }
     ol{
       li {
         list-style:none;
+        width:100%;
+        float:left;
+        margin-bottom:0px;
         label {
-          width:150px;
+          width:170px;
+          abbr {
+            color:red;
+            margin-left:5px;
+          }
+        }
+        fieldset {
+          border:none;
+          legend {
+            span {
+              
+            }
+          }
+          ol {
+            li {
+              width:auto;
+              display:inline;
+              float:left;
+              margin-right:15px;
+              label {
+                width:50px;
+              }
+              select {
+                width:75px;
+              }
+            }
+          }
         }
       }
     }
@@ -50,3 +83,5 @@ form#new_applicant {
   }
   &:hover {text-decoration:none;}
 }
+.averageField {width:50%;}
+
