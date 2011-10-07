@@ -1,14 +1,14 @@
 / %h4 Personal Information
 #personal_information
   =f.inputs :name => "Personal Information" do
-    = f.input :first_name
-    = f.input :middle_name
-    = f.input :last_name
+    = f.input :first_name, :input_html => { :class => "averageField"}
+    = f.input :middle_name, :input_html => { :class => "averageField"}
+    = f.input :last_name, :input_html => { :class => "averageField"}
     = f.input :gender, :label => "Gender", :as => :select, :collection => ["Male","Female"]
     = f.input :civil_status, :label => "Civil Status", :as => :select, :collection => ["Single","Married"]
     = f.input :birthdate, :label => "Birth Date", :as => :date, :start_year => 1950
   = f.inputs :name => "Address and Contact details" do
-    = f.input :street, :label => "Street Address"
+    = f.input :street, :label => "Street Address", :input_html => { :class => "averageField"}
     = f.input :city
     = f.input :region
     = f.input :zip
@@ -20,14 +20,15 @@
     = f.input :philhealth, :label => "PhilHealth No."
     = f.input :pagibig, :label => "PagIbig No."
     = f.input :tin, :label => "TIN"
-  = f.inputs :name => "Other personal details" do
+  = f.inputs :name => "Plans abroad" do
     = f.input :other_skills, :as => :text, :input_html => { :class => "longField midSizeTxtArea"}
     = f.input :abroad_plans, :label => "Do you have plans abroad?", :as => :radio, :collection => ["Yes","No"]
     = f.input :how_soon, :label => "How Soon?"
+  = f.inputs :name => "Emergency Contact Details" do
     = f.input :emergency_contact, :label => "Emergency Contact Person"
     = f.input :emergency_phone, :label => "Emergency Contact Person's number"
     = f.input :emergency_address, :label => "Emergency Contact Person's address"
     = f.input :date_available_for_work, :label => "Date available for work", :as => :date
     = f.input :desired_salary_range
     = f.input :date_of_application, :label => "Date of Application", :as => :date
-    = f.input :other_observations, :as => :text
+    / = f.input :other_observations, :as => :text
