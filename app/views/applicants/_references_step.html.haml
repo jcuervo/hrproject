@@ -1,0 +1,5 @@
+=f.semantic_fields_for :family do |f|
+  =f.input :relationship, :as => :select, :collection => ["Father","Mother","Sibling"]
+  =f.input :name
+  =f.input :age
+  =f.input :occupation

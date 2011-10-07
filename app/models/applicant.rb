@@ -21,7 +21,7 @@ class Applicant < ActiveRecord::Base
                   :region, :zip, :birthdate, :landline, :mobile, :email, :sss, :philhealth, :pagibig, 
                   :tin, :other_skills, :abroad_plans, :how_soon, :emergency_contact, :emergency_address, 
                   :emergency_phone, :date_available_for_work, :desired_salary_range, :date_of_application,
-                  :other_observations
+                  :other_observations, :educations_attributes, :families_attributes, :work_experiences_attributes
 
   attr_writer :current_step
 

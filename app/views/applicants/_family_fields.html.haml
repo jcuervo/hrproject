@@ -1,0 +1,9 @@
+.nested-fields
+  =f.inputs do 
+    =f.input :relationship, :as => :select, :collection => ["Father","Mother","Sibling"]
+    =f.input :name
+    =f.input :age
+    =f.input :occupation
+    %li
+      =label_tag ''
+      =link_to_remove_association "remove family relationship", f

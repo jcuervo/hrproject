@@ -1,0 +1,16 @@
+.nested-fields
+  =f.inputs do 
+    =f.input :employer
+    =f.input :address
+    =f.input :supervisor
+    =f.input :supervisor_contact
+    =f.input :can_contact, :label => "Can we contact him/her?", :as => :radio
+    =f.input :job_title
+    =f.input :employed_from, :label => "Employed From", :as => :date
+    =f.input :employed_to, :label => "Employed To", :as => :date  
+    =f.input :salary_range 
+    =f.input :responsibilities, :as => :text
+    =f.input :reason_for_leaving, :as => :text
+  %li
+    =label_tag ''
+    =link_to_remove_association "remove work experience", f

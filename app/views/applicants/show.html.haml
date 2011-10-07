@@ -36,7 +36,7 @@
   - unless applicant.birthdate.blank?
     %p
       %strong Birthdate:
-      =h applicant.birthdate.strftime("%M %d, %Y")
+      =h applicant.birthdate.strftime("%B %d, %Y")
   - unless applicant.landline.blank?
     %p
       %strong Landline:
@@ -100,7 +100,7 @@
   - unless applicant.date_of_application.blank?
     %p
       %strong Date of Application:
-      =h applicant.date_of_application.strftime("%M %d, %Y")
+      =h applicant.date_of_application.strftime("%B %d, %Y")
   - unless applicant.other_observations.blank?
     %p
       %strong Other Observations:
