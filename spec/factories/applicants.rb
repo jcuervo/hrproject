@@ -36,6 +36,9 @@ Factory.define :applicant do |a|
   a.date_of_application '2011-09-29'
   a.other_observations 'test'
   a.educations_attributes [{:school_name => "school test", :years_attended => "1900-2000", :course => "test"},{:school_name => "school test", :years_attended => "1900-2000", :course => "test"}]
+  a.work_experiences_attributes [{:employer => "employer test", :address => "test", :supervisor => "test"},{:employer => "employer test", :address => "test", :supervisor => "test"}]
+  a.families_attributes [{:relationship => "relationship test", :name => "test", :age => "test", :occupation => "test"},{:relationship => "relationship test", :name => "test", :age => "test", :occupation => "test"}]
+  a.references_attributes [{:name => "test", :address => "test", :contact => "test", :occupation => "test"},{:name => "test", :address => "test", :contact => "test", :occupation => "test"}]
 end
 
 #educations
@@ -49,47 +52,65 @@ end
 
 #work experiences
 
-Factory.define :applicant_with_work_experiences, :parent => :applicant do |a|
+Factory.define :work_experience do |e|
+  e.employer "employer2 test"
+  e.address "test"
+  e.supervisor "test"
+  e.supervisor_contact "test"
+  e.can_contact "false"
+  e.job_title "test"
+  e.employed_from "9-7-2011"
+  e.employed_to "9-7-2011"
+  e.salary_range "1100-2000"
+  e.responsibilities "test"
+  e.reason_for_leaving "test"
+  e.association :applicant
+end
+
+#pending applications
+
+Factory.define :applicant_with_pending_applications, :parent => :applicant do |a|
   a.after_build do |b|
-    b.work_experiences = [Factory.build(:work_experience, :applicant => b), Factory.build(:work_experience, :applicant => b)]
+    b.pending_applications = [Factory.build(:pending_application, :applicant => b), Factory.build(:pending_application, :applicant => b)]
   end
 end
 
-Factory.define :work_experience do |f|
-  f.employer "test"
-  f.address "test"
-  f.supervisor "test"
-  f.supervisor_contact "test"
-  f.can_contact "false"
-  f.job_title "test"
-  f.employed_from "9-06-2011"
-  f.employed_to "9-06-2011"
-  f.salary_range "1100-2000"
-  f.responsibilities "test"
-  f.reason_for_leaving "test"
+Factory.define :pending_application do |f|
+  f.name "test"
+  f.salary "2000"
+  f.other_info "test"
 end
 
-Factory.define(:work_experience_with_applicant, :parent => :applicant) do |a|
+Factory.define(:pending_application_with_applicant, :parent => :applicant) do |a|
   a.association(:applicant)
 end
 
 #families
 
-Factory.define :applicant_with_families, :parent => :applicant do |a|
-  a.after_build do |b|
-    b.families = [Factory.build(:family, :applicant => b), Factory.build(:family, :applicant => b)]
-  end
+Factory.define :family do |e|
+  e.relationship "relationship2 test"
+  e.name "test"
+  e.age 12
+  e.association :applicant
 end
 
-Factory.define :family do |f|
-  f.relationship "test"
-  f.name "test"
-  f.age "10"
-  f.occupation "test"
+#references
+
+Factory.define :reference do |e|
+  e.name "test 2"
+  e.address "test"
+  e.contact "test"
+  e.occupation "test"
+  e.association :applicant
 end
 
-Factory.define(:family_with_applicant, :parent => :applicant) do |a|
-  a.association(:applicant)
+#questions
+
+Factory.define(:question) do |q|
+  q.question     "test"
 end
 
-
+Factory.define(:qanda) do |qnd|
+  qnd.association :question
+  qnd.association :applicant
+end

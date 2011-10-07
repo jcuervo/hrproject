@@ -5,7 +5,7 @@ class Applicant < ActiveRecord::Base
   has_many :pending_applications
   has_many :families
   has_many :references
-  has_many :questions, :through => :qanda
+  has_many :questions, :through => :qandas
 
   accepts_nested_attributes_for :educations, :allow_destroy => true
   accepts_nested_attributes_for :work_experiences, :allow_destroy => true
@@ -13,15 +13,16 @@ class Applicant < ActiveRecord::Base
   accepts_nested_attributes_for :references, :allow_destroy => true
 
 
-  #validates :first_name, :middle_name, :last_name, :presence => true
-  #validates :email, :uniqueness => true
-  #validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :first_name, :middle_name, :last_name, :email, :presence => true
+  validates :email, :uniqueness => true
+  validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
   attr_accessible :first_name, :middle_name, :last_name, :gender, :civil_status, :street, :city, 
                   :region, :zip, :birthdate, :landline, :mobile, :email, :sss, :philhealth, :pagibig, 
                   :tin, :other_skills, :abroad_plans, :how_soon, :emergency_contact, :emergency_address, 
                   :emergency_phone, :date_available_for_work, :desired_salary_range, :date_of_application,
                   :other_observations
+
   attr_writer :current_step
 
   def current_step
